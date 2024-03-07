@@ -1,0 +1,7 @@
+[run]
+source=authentication/, book/, order/,
+omit=
+    bookenv
+    */migrations/*
+    */__init.py__/*
+    */tests/*
