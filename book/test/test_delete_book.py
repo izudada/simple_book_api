@@ -1,24 +1,16 @@
 from rest_framework.test import APITestCase
 from rest_framework import status
 
+from book.models import Book
 from book.contest import create_book_object, register_and_login_client
 
 
-class TestBookUpdateAPI(APITestCase):
+class TestBookDeleteAPI(APITestCase):
     def setUp(self):
         self.data = create_book_object().data
         self.id = self.data.get('id')
         self.url = f'/api/v1/books/{self.id}/'
         self.token = register_and_login_client()
-        self.payload = {
-            "title": "Sample Book Title",
-            "author": "John Doe",
-            "publication_date": "2022-01-01",
-            "isbn": "978-1-23456-789-0",
-            "genre": "ROM",
-            "price": 12000.0,
-            "stock": 17
-        }
 
     def authenticate(self):
         self.client.credentials(HTTP_AUTHORIZATION=f'Bearer {self.token }')
@@ -30,12 +22,13 @@ class TestBookUpdateAPI(APITestCase):
         """
         self.authenticate()
 
-        #   assertion before update
-        self.assertEqual(self.data.get('price'), 10000)
-        response = self.client.put(self.url, self.payload)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        #   assertion after update
-        self.assertEqual(response.data.get('price'), 12000.0)
+
+        #   assertion before deletion
+        self.assertTrue(Book.objects.filter(id=self.id).exists())
+        response = self.client.delete(self.url)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        #   assertion after deletion
+        self.assertFalse(Book.objects.filter(id=self.id).exists())
 
     def test_update_invalid_book_fails(self):
         """
@@ -44,7 +37,7 @@ class TestBookUpdateAPI(APITestCase):
             the request returns 404
         """
         self.authenticate()
-        response = self.client.put('/api/v1/books/247305efecb147f99305/', self.payload)
+        response = self.client.delete('/api/v1/books/247305efecb147f99305/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         
     def test_update_book_without_auth_fails(self):
@@ -52,6 +45,6 @@ class TestBookUpdateAPI(APITestCase):
             Test that an unauthenticated user hits the endpoint
             the request returns 403
         """
-        response = self.client.put(self.url, self.payload)
+        response = self.client.delete(self.url)
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
