@@ -37,4 +37,4 @@ class LoginAPIView(GenericAPIView):
         if user:
             serializer = self.serializer_class(user)
             return response.Response(serializer.data, status=status.HTTP_200_OK)
-        return response.Response(serializer.errors, status=status.HTTP_401_UNAUTHORIZED)
+        return response.Response({'error': 'invalid user'}, status=status.HTTP_401_UNAUTHORIZED)
