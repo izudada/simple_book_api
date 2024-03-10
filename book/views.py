@@ -1,7 +1,5 @@
 from rest_framework import viewsets
-from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
 from rest_framework.filters import SearchFilter
 
 
@@ -18,4 +16,3 @@ class BookViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
     filter_backends = [SearchFilter]
     search_fields = ['title', 'author', 'genre']
-
