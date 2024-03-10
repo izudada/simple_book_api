@@ -1,0 +1,1553 @@
+{
+	"info": {
+		"_postman_id": "9abe5003-1502-4f36-b31f-9982faf82900",
+		"name": "Book API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20677030"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"arcane\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Jack\",\n    \"email\": \"arcane@gmail.com\",\n    \"password\": \"password1234@#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register response example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"arcane\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Jack\",\n    \"email\": \"arcane@gmail.com\",\n    \"password\": \"password1234@#\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/auth/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 08 Mar 2024 21:26:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"arcane\",\n    \"email\": \"arcane@gmail.com\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Jack\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"arcane@gmail.com\",\n    \"password\": \"password1234@#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login response eample",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"arcane@gmail.com\",\n    \"password\": \"password1234@#\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 08 Mar 2024 21:28:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "207"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"arcane@gmail.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFyY2FuZSIsImVtYWlsIjoiYXJjYW5lQGdtYWlsLmNvbSIsImV4cCI6MTcxMDAxOTY5Nn0.cPMTaAvCVfne6ynSXAiUd3ZgUgeYhIpMXEhVbclSvkg\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "create book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"David and Goliath\",\n    \"author\": \"Malcolm Gladwell\",\n    \"publication_date\": \"2024-03-09T12:00:00\",\n    \"isbn\": \"0-061-96436-0\",\n    \"genre\": \"ROM\",\n    \"price\": 10000,\n    \"stock\": 7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/books/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create book",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Outlier\",\n    \"author\": \"Malcolm Gladwell\",\n    \"publication_date\": \"2024-03-09T12:00:00\",\n    \"isbn\": \"0-061-96436-0\",\n    \"genre\": \"ROM\",\n    \"price\": 10000,\n    \"stock\": 7\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/books/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Mar 2024 08:28:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "152"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Outlier\",\n    \"author\": \"Malcolm Gladwell\",\n    \"publication_date\": \"2024-03-09T12:00:00Z\",\n    \"isbn\": \"0-061-96436-0\",\n    \"genre\": \"ROM\",\n    \"price\": 10000,\n    \"stock\": 7\n}"
+						}
+					]
+				},
+				{
+					"name": "list books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list books",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/books",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"books"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Mar 2024 08:56:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "954"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\": \"Outlier\",\n        \"author\": \"Malcolm Gladwell\",\n        \"publication_date\": \"2024-03-09T12:00:00Z\",\n        \"isbn\": \"0-061-96436-0\",\n        \"genre\": \"ROM\",\n        \"price\": 10000,\n        \"stock\": 7\n    },\n    {\n        \"title\": \"David and Goliath\",\n        \"author\": \"Malcolm Gladwell\",\n        \"publication_date\": \"2024-03-09T12:00:00Z\",\n        \"isbn\": \"0-061-96436-0\",\n        \"genre\": \"ROM\",\n        \"price\": 10000,\n        \"stock\": 7\n    },\n    {\n        \"title\": \"Davidand Goliath\",\n        \"author\": \"Malcolm Gladwell\",\n        \"publication_date\": \"2024-03-09T12:00:00Z\",\n        \"isbn\": \"0-061-96436-0\",\n        \"genre\": \"ROM\",\n        \"price\": 10000,\n        \"stock\": 7\n    },\n    {\n        \"title\": \"Davidand Goliath\",\n        \"author\": \"Malcolm Gladwell\",\n        \"publication_date\": \"2024-03-09T12:00:00Z\",\n        \"isbn\": \"0-061-96436-0\",\n        \"genre\": \"ROM\",\n        \"price\": 10000,\n        \"stock\": 7\n    },\n    {\n        \"title\": \"Davidand Goliath\",\n        \"author\": \"Malcolm Gladwell\",\n        \"publication_date\": \"2024-03-09T12:00:00Z\",\n        \"isbn\": \"0-061-96436-0\",\n        \"genre\": \"ROM\",\n        \"price\": 10000,\n        \"stock\": 7\n    },\n    {\n        \"title\": \"Blink\",\n        \"author\": \"Malcolm Gladwell\",\n        \"publication_date\": \"2024-03-09T12:00:00Z\",\n        \"isbn\": \"0-061-96436-0\",\n        \"genre\": \"ROM\",\n        \"price\": 10000,\n        \"stock\": 7\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "get a book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books/247305efecb147f99305dbe72104e913",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"247305efecb147f99305dbe72104e913"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get a book",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/books/247305efecb147f99305dbe72104e913",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"247305efecb147f99305dbe72104e913"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Mar 2024 22:48:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "198"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"247305efecb147f99305dbe72104e913\",\n    \"title\": \"Tipping point\",\n    \"author\": \"Malcolm Gladwell\",\n    \"publication_date\": \"2024-03-09T12:00:00Z\",\n    \"isbn\": \"0-061-96436-0\",\n    \"genre\": \"ROM\",\n    \"price\": 10000,\n    \"stock\": 7\n}"
+						}
+					]
+				},
+				{
+					"name": "search book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books?search=Point",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Point"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "search book",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/books?search=Point",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"books"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "Point"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Mar 2024 23:27:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "250"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"247305efecb147f99305dbe72104e913\",\n            \"title\": \"Tipping point\",\n            \"author\": \"Malcolm Gladwell\",\n            \"publication_date\": \"2024-03-09T12:00:00Z\",\n            \"isbn\": \"0-061-96436-0\",\n            \"genre\": \"ROM\",\n            \"price\": 10000,\n            \"stock\": 7\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "update book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\": 12000.0,\n    \"stock\": 17\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/books/247305efecb147f99305dbe72104e913/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"247305efecb147f99305dbe72104e913",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books/46ad7637e1d04aefb41c9bb76118ba75/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"46ad7637e1d04aefb41c9bb76118ba75",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "order book(s)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orders\": [\n        {\n            \"id\": \"9b244c18937c4587a6f63849f99a43f1\",\n            \"quantity\": 2\n        },\n        {\n            \"id\": \"7e7b3dfe6da94fdaa8450cd7dd2a7796\",\n            \"quantity\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "order book(s)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"orders\": [\n        {\n            \"id\": \"9b244c18937c4587a6f63849f99a43f1\",\n            \"quantity\": 2\n        },\n        {\n            \"id\": \"7e7b3dfe6da94fdaa8450cd7dd2a7796\",\n            \"quantity\": 2\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/orders/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"orders",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Mar 2024 18:22:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "143"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orders\": [\n        {\n            \"id\": \"9b244c18937c4587a6f63849f99a43f1\",\n            \"quantity\": 2\n        },\n        {\n            \"id\": \"7e7b3dfe6da94fdaa8450cd7dd2a7796\",\n            \"quantity\": 2\n        }\n    ],\n    \"total_amount\": 40000\n}"
+						}
+					]
+				},
+				{
+					"name": "view order list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "view order list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/orders/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"orders",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Mar 2024 18:45:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "528"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"907e926ff24c47efb6018d01991ba3ef\",\n            \"user\": \"2\",\n            \"meta_data\": {\n                \"orders\": [\n                    {\n                        \"id\": \"9b244c18937c4587a6f63849f99a43f1\",\n                        \"quantity\": 2\n                    },\n                    {\n                        \"id\": \"7e7b3dfe6da94fdaa8450cd7dd2a7796\",\n                        \"quantity\": 2\n                    },\n                    {\n                        \"id\": \"247305efecb147f99305dbe72104e913\",\n                        \"quantity\": 4\n                    }\n                ],\n                \"total_amount\": 88000\n            }\n        },\n        {\n            \"id\": \"6fe394ce512d4d83b93af41459036e36\",\n            \"user\": \"2\",\n            \"meta_data\": {\n                \"orders\": [\n                    {\n                        \"id\": \"9b244c18937c4587a6f63849f99a43f1\",\n                        \"quantity\": 2\n                    },\n                    {\n                        \"id\": \"7e7b3dfe6da94fdaa8450cd7dd2a7796\",\n                        \"quantity\": 2\n                    }\n                ],\n                \"total_amount\": 40000\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "order detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/907e926ff24c47efb6018d01991ba3ef",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"907e926ff24c47efb6018d01991ba3ef"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "order detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/orders/907e926ff24c47efb6018d01991ba3ef",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders",
+										"907e926ff24c47efb6018d01991ba3ef"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Mar 2024 18:46:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "265"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"907e926ff24c47efb6018d01991ba3ef\",\n    \"user\": \"2\",\n    \"meta_data\": {\n        \"orders\": [\n            {\n                \"id\": \"9b244c18937c4587a6f63849f99a43f1\",\n                \"quantity\": 2\n            },\n            {\n                \"id\": \"7e7b3dfe6da94fdaa8450cd7dd2a7796\",\n                \"quantity\": 2\n            },\n            {\n                \"id\": \"247305efecb147f99305dbe72104e913\",\n                \"quantity\": 4\n            }\n        ],\n        \"total_amount\": 88000\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orders\": [\n        {\n            \"id\": \"9b244c18937c4587a6f63849f99a43f1\",\n            \"quantity\": 4\n        },\n        {\n            \"id\": \"7e7b3dfe6da94fdaa8450cd7dd2a7796\",\n            \"quantity\": 1\n        },\n        {\n            \"id\": \"247305efecb147f99305dbe72104e913\",\n            \"quantity\": 1   \n        }\n    ],\n    \"state\": \"OPEN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders/907e926ff24c47efb6018d01991ba3ef/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"907e926ff24c47efb6018d01991ba3ef",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update order",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"orders\": [\n        {\n            \"id\": \"9b244c18937c4587a6f63849f99a43f1\",\n            \"quantity\": 4\n        },\n        {\n            \"id\": \"7e7b3dfe6da94fdaa8450cd7dd2a7796\",\n            \"quantity\": 1\n        },\n        {\n            \"id\": \"247305efecb147f99305dbe72104e913\",\n            \"quantity\": 1   \n        }\n    ],\n    \"state\": \"OPEN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/orders/907e926ff24c47efb6018d01991ba3ef/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders",
+										"907e926ff24c47efb6018d01991ba3ef",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Mar 2024 22:14:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "192"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orders\": [\n        {\n            \"id\": \"9b244c18937c4587a6f63849f99a43f1\",\n            \"quantity\": 4\n        },\n        {\n            \"id\": \"7e7b3dfe6da94fdaa8450cd7dd2a7796\",\n            \"quantity\": 1\n        },\n        {\n            \"id\": \"247305efecb147f99305dbe72104e913\",\n            \"quantity\": 1\n        }\n    ],\n    \"state\": \"OPEN\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/6fe394ce512d4d83b93af41459036e36/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"6fe394ce512d4d83b93af41459036e36",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "view all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "view all users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Mar 2024 22:44:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "374"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"1\",\n            \"username\": \"tony_medici\",\n            \"first_name\": \"John\",\n            \"last_name\": \"Python\",\n            \"email\": \"tonymedici@gmail.com\"\n        },\n        {\n            \"id\": \"2\",\n            \"username\": \"arcane\",\n            \"first_name\": \"John\",\n            \"last_name\": \"Jack\",\n            \"email\": \"arcane@gmail.com\"\n        },\n        {\n            \"id\": \"701a9b0afd7948beac0fd8d9b61d766e\",\n            \"username\": \"admin\",\n            \"first_name\": \"\",\n            \"last_name\": \"\",\n            \"email\": \"admin@gmail.com\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get user detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/701a9b0afd7948beac0fd8d9b61d766e",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"701a9b0afd7948beac0fd8d9b61d766e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/701a9b0afd7948beac0fd8d9b61d766e",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"701a9b0afd7948beac0fd8d9b61d766e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Mar 2024 22:45:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"701a9b0afd7948beac0fd8d9b61d766e\",\n    \"username\": \"admin\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"email\": \"admin@gmail.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update user detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Jack\",\n    \"last_name\": \"Higgins\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/701a9b0afd7948beac0fd8d9b61d766e/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"701a9b0afd7948beac0fd8d9b61d766e",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update user detail",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\": \"Jack\",\n    \"last_name\": \"Higgins\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users/701a9b0afd7948beac0fd8d9b61d766e/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"701a9b0afd7948beac0fd8d9b61d766e",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Mar 2024 22:47:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "128"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"701a9b0afd7948beac0fd8d9b61d766e\",\n    \"username\": \"admin\",\n    \"first_name\": \"Jack\",\n    \"last_name\": \"Higgins\",\n    \"email\": \"admin@gmail.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFyY2FuZSIsImVtYWlsIjoiYXJjYW5lQGdtYWlsLmNvbSIsImV4cCI6MTcxMDE5NzAwOX0.S4wwQihb3fkAJRFS2l6PSwmHn6R4hsYNwmFSXSABccg",
+			"type": "string"
+		}
+	]
+}
