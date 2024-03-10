@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'authentication',
     'book',
     'order',
+    'user'
 ]
 
 REST_FRAMEWORK = {
