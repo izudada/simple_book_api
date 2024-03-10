@@ -22,7 +22,7 @@ class TestCreateBookAPI(APITestCase):
     def authenticate(self):
         self.client.credentials(HTTP_AUTHORIZATION=f'Bearer {self.token }')
 
-    def test_create_book_create_succeeds(self):
+    def test_create_book_endpoint_succeeds(self):
         """
             Test that an authenticated user hits the endpoint
             with necessary payload
